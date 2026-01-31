@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Isa ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Quicksand:wght@400;500;600&amp;family=Dancing+Script:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      font-family: 'Quicksand', sans-serif;
+    }
+    
+    .cursive {
+      font-family: 'Dancing Script', cursive;
+    }
+    
+    .serif {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(8deg); }
+    }
+    
+    @keyframes floatingElement {
+      0% { transform: translateY(100%) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100%) rotate(360deg); opacity: 0; }
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 25px rgba(244, 63, 94, 0.4); }
+      50% { box-shadow: 0 0 50px rgba(244, 63, 94, 0.8), 0 0 80px rgba(251, 113, 133, 0.4); }
+    }
+    
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.3); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.3); }
+      70% { transform: scale(1); }
+    }
+    
+    @keyframes softGlow {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.3)); }
+      50% { filter: drop-shadow(0 0 20px rgba(244, 114, 182, 0.6)); }
+    }
+    
+    @keyframes parallax {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-50px); }
+    }
+    
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+    
+    .animate-sparkle {
+      animation: sparkle 3s ease-in-out infinite;
+    }
+    
+    .animate-pulse-glow {
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    
+    .animate-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+    
+    .animate-heartbeat {
+      animation: heartBeat 1.5s ease-in-out infinite;
+    }
+    
+    .animate-soft-glow {
+      animation: softGlow 3s ease-in-out infinite;
+    }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+    
+    .glass-light {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .floating-element {
+      position: fixed;
+      pointer-events: none;
+      z-index: 100;
+      animation: floatingElement 4s ease-out forwards;
+    }
+    
+    .section-fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .card-hover {
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-15px) scale(1.03);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #f43f5e, #ec4899, #d946a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn-valentine {
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(244, 63, 94, 0.3);
+    }
+    
+    .btn-valentine:hover {
+      background: linear-gradient(135deg, #ec4899, #f43f5e);
+      transform: scale(1.08);
+      box-shadow: 0 15px 40px rgba(244, 63, 94, 0.5);
+    }
+    
+    .btn-valentine:active {
+      transform: scale(0.95);
+    }
+    
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #f43f5e, #ec4899);
+      border-radius: 5px;
+    }
+    
+    .text-shadow {
+      text-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div id="app-wrapper" class="w-full h-full relative"><!-- Animated Background -->
+   <div class="fixed inset-0 overflow-hidden pointer-events-none" style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 20%, #fecaca 40%, #fed7aa 60%, #fff7ed 80%, #fce7f3 100%);"><!-- Animated Background Elements -->
+    <div class="absolute text-rose-300/30 text-7xl animate-float" style="top: 5%; left: 8%; animation-delay: 0s;">
+     💖
+    </div>
+    <div class="absolute text-pink-300/25 text-5xl animate-float" style="top: 15%; right: 12%; animation-delay: 1.2s;">
+     🌹
+    </div>
+    <div class="absolute text-rose-200/30 text-6xl animate-float" style="top: 45%; left: 5%; animation-delay: 2s;">
+     💕
+    </div>
+    <div class="absolute text-pink-300/25 text-4xl animate-float" style="top: 65%; right: 10%; animation-delay: 0.8s;">
+     ✨
+    </div>
+    <div class="absolute text-rose-300/20 text-5xl animate-float" style="top: 75%; left: 75%; animation-delay: 1.5s;">
+     🌸
+    </div>
+    <div class="absolute text-pink-400/20 text-6xl animate-float" style="top: 30%; right: 5%; animation-delay: 2.5s;">
+     💗
+    </div><!-- Sparkles -->
+    <div class="absolute w-3 h-3 bg-white rounded-full animate-sparkle" style="top: 12%; left: 25%; animation-delay: 0s;"></div>
+    <div class="absolute w-2 h-2 bg-pink-300 rounded-full animate-sparkle" style="top: 35%; right: 20%; animation-delay: 0.6s;"></div>
+    <div class="absolute w-2 h-2 bg-white rounded-full animate-sparkle" style="top: 55%; left: 40%; animation-delay: 1.2s;"></div>
+    <div class="absolute w-3 h-3 bg-rose-300 rounded-full animate-sparkle" style="top: 70%; right: 35%; animation-delay: 1.8s;"></div>
+    <div class="absolute w-2 h-2 bg-white rounded-full animate-sparkle" style="top: 25%; left: 80%; animation-delay: 0.4s;"></div>
+    <div class="absolute w-2 h-2 bg-pink-400 rounded-full animate-sparkle" style="top: 60%; left: 20%; animation-delay: 1s;"></div>
+   </div><!-- Music Toggle --> <button id="musicToggle" class="fixed top-4 right-4 z-50 glass rounded-full p-3 text-rose-500 hover:text-rose-600 transition-all hover:scale-110 shadow-lg" title="Toggle Music">
+    <svg id="musicIcon" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+    </svg></button> <!-- Main Content -->
+   <div class="relative z-10 w-full"><!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-12">
+     <div class="text-center max-w-4xl mx-auto section-fade visible">
+      <div class="mb-8 inline-block animate-soft-glow"><span class="text-8xl sm:text-9xl block">💐</span>
+      </div>
+      <h1 id="heroTitle" class="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl gradient-text mb-6 leading-tight text-shadow">Isa, I Literally Made a Whole Website Just to Prove You're Special.</h1>
+      <p id="heroSubtitle" class="text-lg sm:text-xl md:text-2xl text-rose-500/90 mb-10 font-medium">This part of the internet belongs to you ❤️</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+       <div class="glass rounded-full px-8 py-4 text-rose-700 font-semibold"><span class="cursive text-2xl">Scroll for magic ✨</span>
+       </div>
+      </div>
+      <div class="mt-16 animate-bounce">
+       <svg class="w-8 h-8 mx-auto text-rose-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+       </svg>
+      </div>
+     </div>
+    </section><!-- Why You're Different Section -->
+    <section class="py-24 px-4">
+     <div class="max-w-4xl mx-auto">
+      <div class="section-fade text-center mb-16">
+       <h2 class="serif text-3xl sm:text-4xl md:text-5xl text-rose-600 mb-6 text-shadow">Why You're Different</h2>
+       <div class="w-32 h-1.5 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 mx-auto rounded-full"></div>
+      </div>
+      <div class="space-y-8">
+       <div class="section-fade glass rounded-3xl p-8 sm:p-10 card-hover">
+        <div class="flex items-start gap-6"><span class="text-5xl flex-shrink-0">🌸</span>
+         <div>
+          <h3 class="serif text-2xl sm:text-3xl text-rose-600 mb-3">Effortlessly Magnetic</h3>
+          <p id="differentLine1" class="text-rose-700/80 text-base sm:text-lg leading-relaxed">You walk into a room and something shifts. People feel it. There's this natural warmth about you that makes everything feel lighter, easier, better. That's not just being pretty — that's being genuinely special.</p>
+         </div>
+        </div>
+       </div>
+       <div class="section-fade glass rounded-3xl p-8 sm:p-10 card-hover" style="animation-delay: 0.15s;">
+        <div class="flex items-start gap-6"><span class="text-5xl flex-shrink-0">💫</span>
+         <div>
+          <h3 class="serif text-2xl sm:text-3xl text-rose-600 mb-3">Genuinely Kind</h3>
+          <p id="differentLine2" class="text-rose-700/80 text-base sm:text-lg leading-relaxed">You don't just say nice things — you actually mean them. You listen like what people say matters (because with you, it does). Kindness looks good on you. Really good.</p>
+         </div>
+        </div>
+       </div>
+       <div class="section-fade glass rounded-3xl p-8 sm:p-10 card-hover" style="animation-delay: 0.3s;">
+        <div class="flex items-start gap-6"><span class="text-5xl flex-shrink-0">🎆</span>
+         <div>
+          <h3 class="serif text-2xl sm:text-3xl text-rose-600 mb-3">Unforgettably You</h3>
+          <p id="differentLine3" class="text-rose-700/80 text-base sm:text-lg leading-relaxed">The way you laugh, the way you think, the way you see the world — it's uniquely yours. And honestly? That's what makes you impossible to forget. You've left an impression that doesn't fade.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Things I Adore Section -->
+    <section class="py-24 px-4">
+     <div class="max-w-5xl mx-auto">
+      <div class="section-fade text-center mb-16">
+       <h2 class="serif text-3xl sm:text-4xl md:text-5xl text-rose-600 mb-6 text-shadow">Things I Adore About You</h2>
+       <div class="w-32 h-1.5 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+       <div class="section-fade glass rounded-2xl p-8 card-hover text-center"><span class="text-6xl mb-6 block animate-soft-glow">😊</span>
+        <h4 class="cursive text-2xl text-rose-500 mb-3">Your Smile</h4>
+        <p class="text-rose-600/70 text-base">It's literally everything. Enough said.</p>
+       </div>
+       <div class="section-fade glass rounded-2xl p-8 card-hover text-center" style="animation-delay: 0.1s;"><span class="text-6xl mb-6 block animate-soft-glow">🧠</span>
+        <h4 class="cursive text-2xl text-rose-500 mb-3">Your Mind</h4>
+        <p class="text-rose-600/70 text-base">Smart, curious, and genuinely interesting.</p>
+       </div>
+       <div class="section-fade glass rounded-2xl p-8 card-hover text-center" style="animation-delay: 0.2s;"><span class="text-6xl mb-6 block animate-soft-glow">🎭</span>
+        <h4 class="cursive text-2xl text-rose-500 mb-3">Your Humor</h4>
+        <p class="text-rose-600/70 text-base">You make me laugh in ways I didn't expect.</p>
+       </div>
+       <div class="section-fade glass rounded-2xl p-8 card-hover text-center" style="animation-delay: 0.3s;"><span class="text-6xl mb-6 block animate-soft-glow">💪</span>
+        <h4 class="cursive text-2xl text-rose-500 mb-3">Your Strength</h4>
+        <p class="text-rose-600/70 text-base">You handle life with such grace and power.</p>
+       </div>
+       <div class="section-fade glass rounded-2xl p-8 card-hover text-center" style="animation-delay: 0.4s;"><span class="text-6xl mb-6 block animate-soft-glow">✨</span>
+        <h4 class="cursive text-2xl text-rose-500 mb-3">Your Vibe</h4>
+        <p class="text-rose-600/70 text-base">Being around you just feels right.</p>
+       </div>
+       <div class="section-fade glass rounded-2xl p-8 card-hover text-center" style="animation-delay: 0.5s;"><span class="text-6xl mb-6 block animate-soft-glow">💝</span>
+        <h4 class="cursive text-2xl text-rose-500 mb-3">All of You</h4>
+        <p class="text-rose-600/70 text-base">The good, the real, the whole package.</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Valentine Proposal Section -->
+    <section class="py-24 px-4">
+     <div class="max-w-3xl mx-auto text-center">
+      <div class="section-fade">
+       <div class="glass rounded-3xl p-10 sm:p-14"><span class="text-8xl block mb-8 animate-heartbeat">💘</span>
+        <h2 class="serif text-3xl sm:text-4xl md:text-5xl text-rose-600 mb-8 text-shadow">The Big Question...</h2>
+        <p class="text-rose-600/80 text-lg sm:text-xl mb-12 font-medium">I've been wanting to ask you something important...</p><button id="valentineBtn" class="btn-valentine text-white text-xl sm:text-2xl px-12 sm:px-20 py-5 sm:py-7 rounded-full font-bold animate-glow shadow-2xl"> Will You Be My Valentine, Isa? 💕 </button>
+        <div id="valentineResponse" class="mt-10 hidden">
+         <div class="text-7xl mb-6 animate-heartbeat">
+          🥳💖✨
+         </div>
+         <p class="cursive text-4xl sm:text-5xl text-rose-500 mb-2">You said YES!</p>
+         <p class="text-rose-600/70 text-lg">Best decision ever! 😉💕</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Soft Roasts Section -->
+    <section class="py-24 px-4">
+     <div class="max-w-4xl mx-auto">
+      <div class="section-fade text-center mb-14">
+       <h2 class="serif text-3xl sm:text-4xl md:text-5xl text-rose-600 mb-4 text-shadow">Soft Roasts Because You're Cute, Not Fragile 😌</h2>
+       <div class="w-32 h-1.5 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 mx-auto rounded-full"></div>
+      </div>
+      <div class="space-y-6">
+       <div class="section-fade glass-light rounded-2xl p-7 card-hover border-l-4 border-rose-400">
+        <div class="flex items-center gap-4"><span class="text-4xl flex-shrink-0">😏</span>
+         <p class="text-rose-700 text-base sm:text-lg italic font-medium">"Isa, you're cute… but don't let it get to your head. Too late? Yeah, figured."</p>
+        </div>
+       </div>
+       <div class="section-fade glass-light rounded-2xl p-7 card-hover border-l-4 border-pink-400" style="animation-delay: 0.1s;">
+        <div class="flex items-center gap-4"><span class="text-4xl flex-shrink-0">🚶‍♀️</span>
+         <p class="text-rose-700 text-base sm:text-lg italic font-medium">"You really walked into my life and said 'deal with it.' Rude."</p>
+        </div>
+       </div>
+       <div class="section-fade glass-light rounded-2xl p-7 card-hover border-l-4 border-rose-300" style="animation-delay: 0.2s;">
+        <div class="flex items-center gap-4"><span class="text-4xl flex-shrink-0">🔋</span>
+         <p class="text-rose-700 text-base sm:text-lg italic font-medium">"You're the reason my phone battery suffers. Honestly? Worth it."</p>
+        </div>
+       </div>
+       <div class="section-fade glass-light rounded-2xl p-7 card-hover border-l-4 border-orange-400" style="animation-delay: 0.3s;">
+        <div class="flex items-center gap-4"><span class="text-4xl flex-shrink-0">⚠️</span>
+         <p class="text-rose-700 text-base sm:text-lg italic font-medium">"Not saying you're addictive, but explain why I keep smiling?"</p>
+        </div>
+       </div>
+       <div class="section-fade glass-light rounded-2xl p-7 card-hover border-l-4 border-red-400" style="animation-delay: 0.4s;">
+        <div class="flex items-center gap-4"><span class="text-4xl flex-shrink-0">😤</span>
+         <p class="text-rose-700 text-base sm:text-lg italic font-medium">"You're lucky you're adorable, otherwise I'd roast harder."</p>
+        </div>
+       </div>
+       <div class="section-fade glass-light rounded-2xl p-7 card-hover border-l-4 border-amber-400" style="animation-delay: 0.5s;">
+        <div class="flex items-center gap-4"><span class="text-4xl flex-shrink-0">🧠</span>
+         <p class="text-rose-700 text-base sm:text-lg italic font-medium">"You live in my head rent-free. At least cover the utilities."</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Closing Section -->
+    <section class="py-24 px-4">
+     <div class="max-w-3xl mx-auto text-center">
+      <div class="section-fade">
+       <div class="glass rounded-3xl p-10 sm:p-14">
+        <div class="text-8xl mb-10 inline-block animate-pulse-glow">
+         💖
+        </div>
+        <h2 class="serif text-3xl sm:text-4xl text-rose-600 mb-8 text-shadow">Forever Yours</h2>
+        <p id="closingMessage" class="cursive text-2xl sm:text-3xl text-rose-600 mb-12 leading-relaxed">"This website is temporary. The way you made me feel isn't."</p>
+        <div class="flex justify-center gap-3 text-5xl"><span class="animate-float" style="animation-delay: 0s;">🌹</span> <span class="animate-float" style="animation-delay: 0.2s;">💕</span> <span class="animate-float" style="animation-delay: 0.4s;">✨</span> <span class="animate-float" style="animation-delay: 0.6s;">💖</span> <span class="animate-float" style="animation-delay: 0.8s;">🌹</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Footer -->
+    <footer class="py-12 px-4 text-center">
+     <div class="section-fade">
+      <p class="text-rose-600/60 text-base sm:text-lg font-medium">Made with effort, courage, and a little bit of madness. ❤️</p>
+      <p class="cursive text-2xl sm:text-3xl text-rose-400 mt-3">For Isa, Always 💕</p>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_title: "Isa, I Literally Made a Whole Website Just to Prove You're Special.",
+      hero_subtitle: "This part of the internet belongs to you ❤️",
+      different_line_1: "You walk into a room and something shifts. People feel it. There's this natural warmth about you that makes everything feel lighter, easier, better. That's not just being pretty — that's being genuinely special.",
+      different_line_2: "You don't just say nice things — you actually mean them. You listen like what people say matters (because with you, it does). Kindness looks good on you. Really good.",
+      different_line_3: "The way you laugh, the way you think, the way you see the world — it's uniquely yours. And honestly? That's what makes you impossible to forget. You've left an impression that doesn't fade.",
+      closing_message: "\"This website is temporary. The way you made me feel isn't.\""
+    };
+    
+    let config = { ...defaultConfig };
+    let musicPlaying = false;
+    
+    // Initialize Element SDK
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (newConfig) => {
+        config = { ...defaultConfig, ...newConfig };
+        
+        document.getElementById('heroTitle').textContent = config.hero_title || defaultConfig.hero_title;
+        document.getElementById('heroSubtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+        document.getElementById('differentLine1').textContent = config.different_line_1 || defaultConfig.different_line_1;
+        document.getElementById('differentLine2').textContent = config.different_line_2 || defaultConfig.different_line_2;
+        document.getElementById('differentLine3').textContent = config.different_line_3 || defaultConfig.different_line_3;
+        document.getElementById('closingMessage').textContent = config.closing_message || defaultConfig.closing_message;
+      },
+      mapToCapabilities: (config) => ({
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      }),
+      mapToEditPanelValues: (config) => new Map([
+        ["hero_title", config.hero_title || defaultConfig.hero_title],
+        ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+        ["different_line_1", config.different_line_1 || defaultConfig.different_line_1],
+        ["different_line_2", config.different_line_2 || defaultConfig.different_line_2],
+        ["different_line_3", config.different_line_3 || defaultConfig.different_line_3],
+        ["closing_message", config.closing_message || defaultConfig.closing_message]
+      ])
+    });
+    
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.section-fade').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Valentine button interaction
+    const valentineBtn = document.getElementById('valentineBtn');
+    const valentineResponse = document.getElementById('valentineResponse');
+    
+    valentineBtn.addEventListener('click', () => {
+      valentineBtn.style.display = 'none';
+      valentineResponse.classList.remove('hidden');
+      triggerCelebration();
+    });
+    
+    function triggerCelebration() {
+      const elements = ['❤️', '💕', '💖', '💗', '💘', '💝', '🌹', '🌸', '✨', '🎉'];
+      
+      // Create floating elements
+      for (let i = 0; i < 60; i++) {
+        setTimeout(() => {
+          createFloatingElement(elements[Math.floor(Math.random() * elements.length)]);
+        }, i * 80);
+      }
+      
+      // Create falling petals
+      for (let i = 0; i < 40; i++) {
+        setTimeout(() => {
+          createFallingPetal();
+        }, i * 120);
+      }
+    }
+    
+    function createFloatingElement(emoji) {
+      const element = document.createElement('div');
+      element.className = 'floating-element';
+      element.textContent = emoji;
+      element.style.left = Math.random() * 100 + '%';
+      element.style.bottom = '-50px';
+      element.style.fontSize = (Math.random() * 35 + 25) + 'px';
+      element.style.animationDuration = (Math.random() * 2.5 + 3.5) + 's';
+      
+      document.body.appendChild(element);
+      
+      setTimeout(() => element.remove(), 6000);
+    }
+    
+    function createFallingPetal() {
+      const petal = document.createElement('div');
+      petal.className = 'floating-element';
+      petal.textContent = ['🌸', '🌹', '🌺'][Math.floor(Math.random() * 3)];
+      petal.style.left = Math.random() * 100 + '%';
+      petal.style.top = '-50px';
+      petal.style.fontSize = (Math.random() * 25 + 18) + 'px';
+      petal.style.animationDuration = (Math.random() * 3.5 + 4.5) + 's';
+      
+      document.body.appendChild(petal);
+      
+      setTimeout(() => petal.remove(), 8000);
+    }
+    
+    // Music toggle
+    const musicToggle = document.getElementById('musicToggle');
+    const musicIcon = document.getElementById('musicIcon');
+    
+    musicToggle.addEventListener('click', () => {
+      musicPlaying = !musicPlaying;
+      
+      if (musicPlaying) {
+        musicIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+        musicToggle.classList.add('bg-rose-100');
+      } else {
+        musicIcon.innerHTML = '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
+        musicToggle.classList.remove('bg-rose-100');
+      }
+    });
+    
+    // Smooth scrolling
+    document.documentElement.style.scrollBehavior = 'smooth';
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c666742714e9ac8',t:'MTc2OTgzMzA4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
